@@ -1,9 +1,39 @@
-export default class Map {
+/* Explicação para a classe Platform:
 
-    constructor(gravity, grounds, mapImage) {
+--> Quando formos criar uma plataforma, primeiro vamos dar uma coordnada e
+uma largura e altura para o Phaser.js calcular um retângulo e gerar n o espaço
+assim ó:
+
+[dentro da Scene]
+    this.platforms = this.physics.add.staticGroup();
+
+    // objeto "map" da classe Map
+    map.platforms.forEach(p => {
+        rectangle = this.add.rectangle(
+            p.x + p.width/2,
+            p.y + p.height/2,
+            p.width,
+            p.height
+        );
+        
+        // agora pra frente, usamos essas informações
+        // salvas no objeto map para criar 
+
+        this.physics.add.existing(rect, true);
+        
+        this.platforms.add(rect);
+    });    
+*/
+export default class Map {
+    constructor(gravity, platforms, mapImage) {
         this.gravity = gravity;
-        this.grounds = grounds;
+        this.platforms = platforms;
         this.mapImage = mapImage;
+    }
+
+    // caso seja útil, tá aí
+    createPlatform(x, y, width, height) {
+        return new Platform(x, y, width, height);
     }
 
     showGravity() {
@@ -14,11 +44,16 @@ export default class Map {
         console.log(`${this.grounds} - grounds`);
     }
 
-    /*
-    (?) sugestão(ões):
-    */
+    /* (?) sugestão(ões): */
+    //
+    //
+}
 
-    // getPlatforms(grounds) {}
-
-    // 
+class Platform {
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
 }
