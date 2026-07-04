@@ -25,6 +25,8 @@ assim ó:
     });    
 */
 export default class Map {
+    constructor(){}
+
     constructor(gravity, platforms, mapImage) {
         this.gravity = gravity;
         this.platforms = platforms;

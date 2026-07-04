@@ -13,19 +13,19 @@ export default class Character {
 	}
 
 	attack(){
-		console.log('${this.name} - attack');
+		console.log(`${this.name} - attack`);
 	}
 	
 	special(){
-		console.log('${this.name} - special');
+		console.log(`${this.name} - special`);
 	}
 	jump(){
-		console.log('${this.name} - jump');
+		console.log(`${this.name} - jump`);
 	}
 	dash(){
-		console.log('${this.name} - dash');
+		console.log(`${this.name} - dash`);
 	}
 	getHit(){
-		console.log('${this.name} - getHit');
+		console.log(`${this.name} - getHit`);
 	}
 }
