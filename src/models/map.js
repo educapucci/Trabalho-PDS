@@ -27,10 +27,10 @@ assim ó:
 export default class Map {
     constructor(){}
 
-    constructor(gravity, platforms, mapImage) {
-        this.gravity = gravity;
-        this.platforms = platforms;
-        this.mapImage = mapImage;
+    constructor(data) {
+        this.gravity = data.gravity;
+        this.platforms = data.platforms;
+        this.mapImage = data.mapImage;
     }
 
     // caso seja útil, tá aí
@@ -52,10 +52,10 @@ export default class Map {
 }
 
 class Platform {
-    constructor(x, y, width, height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+    constructor(data) {
+        this.x = data.x;
+        this.y = data.y;
+        this.width = data.width;
+        this.height = data.height;
     }
 }
