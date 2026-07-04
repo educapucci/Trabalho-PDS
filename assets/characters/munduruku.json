@@ -1,0 +1,15 @@
+{
+    "name": "Munduruku",
+    "damage": 0,
+    "strenght": 8,
+    "resistence": 10,
+    "speed": 2,
+    "hitbox": [
+        15,
+        15
+    ],
+    "mov": [
+        "spin"
+    ],
+    "image": ""
+}

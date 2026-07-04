@@ -1,0 +1,15 @@
+{
+    "name": "Urutu",
+    "damage": 0,
+    "strenght": 5,
+    "resistence": 5,
+    "speed": 10,
+    "hitbox": [
+        10,
+        10
+    ],
+    "mov": [
+        "dashAttack"
+    ],
+    "image": ""
+}
