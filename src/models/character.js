@@ -1,27 +1,68 @@
 export default class Character {
-  constructor(name, strength, resistance, speed, hitbox, image, mov) {
-    this.mov = mov;
-    this.name = name;
-    this.damage = 0;
-    this.strength = strength;
-    this.resistance = resistance;
-    this.speed = speed;
-    this.hitbox = hitbox;
-    this.image = image;
+  constructor(scene) {
+    this.scene = scene;
   }
+
+  preload(name) {
+    this.characterName = name;
+
+    this.scene.load.json(
+      `character-${this.characterName}`,
+      `assets/characters/${this.characterName}/data/data.json`,
+    );
+
+    this.scene.load.spritesheet(
+      `character-image-${this.characterName}`,
+      `assets/characters/${this.characterName}/images/IDLE.png`,
+      {
+        frameWidth: 64,
+        frameHeight: 64,
+      },
+    );
+  }
+
+  create(x, y) {
+    const data = this.scene.cache.json.get(`character-${this.characterName}`);
+
+    this.strength = data.strength;
+    this.speed = data.speed;
+    this.resistance = data.resistance;
+
+    this.sprite = this.scene.physics.add.sprite(
+      x,
+      y,
+      `character-image-${this.characterName}`,
+    );
+
+    this.sprite.setCollideWorldBounds(true);
+  }
+
+  moveLeft() {
+    this.sprite.setVelocityX(-this.speed);
+  }
+
+  moveRight() {
+    this.sprite.setVelocityX(this.speed);
+  }
+
+  jump() {}
 
   attack() {
     console.log(`${this.name} - attack`);
   }
+
   special() {
     console.log(`${this.name} - special`);
   }
-  jump() {
-    console.log(`${this.name} - jump`);
-  }
+
   dash() {
     console.log(`${this.name} - dash`);
   }
+
+  hit() {
+    console.log(`${this.name} - hit`);
+  }
+
   getHit() {
     console.log(`${this.name} - getHit`);
   }

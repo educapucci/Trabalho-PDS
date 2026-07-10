@@ -8,11 +8,11 @@ export default class Map {
     this.mapName = name;
     this.scene.load.json(
       `map-${this.mapName}`,
-      `assets/maps/data/${this.mapName}.json`,
+      `assets/maps/${this.mapName}/data/data.json`,
     );
     this.scene.load.image(
       `map-image-${this.mapName}`,
-      `assets/maps/image/${this.mapName}.jpg`,
+      `assets/maps/${this.mapName}/image/image.jpg`,
     );
   }
 

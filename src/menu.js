@@ -21,4 +21,5 @@ const game = new Phaser.Game(config);
 
 game.scene.start("Game", {
   mapName: "ice",
+  characterNames: ["urutu"],
 });
