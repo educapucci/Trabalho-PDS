@@ -4,22 +4,28 @@ export default class Map {
     this.platforms = [];
   }
 
-  load(name) {
+  preload(name) {
     this.mapName = name;
-    this.scene.load.json(`map-${name}`, `assets/maps/data/${name}.json`);
-    this.scene.load.image(`map-image-${name}`, `assets/maps/image/${name}.jpg`);
+    this.scene.load.json(
+      `map-${this.mapName}`,
+      `assets/maps/data/${this.mapName}.json`,
+    );
+    this.scene.load.image(
+      `map-image-${this.mapName}`,
+      `assets/maps/image/${this.mapName}.jpg`,
+    );
   }
 
   create() {
     const mapData = this.scene.cache.json.get(`map-${this.mapName}`);
     this.platforms = Array.isArray(mapData?.platforms) ? mapData.platforms : [];
 
-    if (!this.platforms.length) {
-      console.warn("Nenhuma plataforma foi carregada para o mapa.");
-      return;
-    }
+    const background = this.scene.add.image(0, 0, `map-image-${this.mapName}`);
 
-    //TODO: Adicionar imagem mapa
+    background.setOrigin(0, 0);
+
+    background.displayWidth = this.scene.scale.width;
+    background.displayHeight = this.scene.scale.height;
 
     this.platforms.forEach((platform) => {
       const rect = this.scene.add.rectangle(

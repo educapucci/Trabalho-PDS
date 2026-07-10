@@ -13,7 +13,7 @@ export default class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.map.load(this.mapName);
+    this.map.preload(this.mapName);
   }
 
   create() {
@@ -21,32 +21,4 @@ export default class Game extends Phaser.Scene {
   }
 
   update() {}
-
-  getConfig() {
-    return {
-      type: Phaser.AUTO,
-      width: window.innerWidth,
-      height: window.innerHeight,
-      scale: {
-        mode: Phaser.Scale.RESIZE,
-        autoCenter: Phaser.Scale.CENTER_BOTH,
-      },
-
-      physics: {
-        default: "arcade",
-
-        arcade: {
-          gravity: {
-            y: 1000,
-          },
-        },
-      },
-
-      scene: {
-        preload: game.preload(this),
-        create: game.create(this),
-        update: game.update(this),
-      },
-    };
-  }
 }

@@ -2,38 +2,38 @@
   "platforms": [
     {
       "id": "top",
-      "x": 820,
-      "y": 218,
-      "width": 410,
+      "x": 1050,
+      "y": 330,
+      "width": 500,
       "height": 45
     },
     {
       "id": "left",
-      "x": 245,
-      "y": 472,
+      "x": 350,
+      "y": 550,
       "width": 330,
       "height": 45
     },
     {
       "id": "right",
-      "x": 1400,
-      "y": 487,
+      "x": 1750,
+      "y": 560,
       "width": 320,
       "height": 45
     },
     {
       "id": "bottom_left",
-      "x": 675,
-      "y": 935,
+      "x": 720,
+      "y": 940,
       "width": 360,
-      "height": 55
+      "height": 300
     },
     {
       "id": "bottom_right",
-      "x": 1185,
-      "y": 935,
+      "x": 1360,
+      "y": 945,
       "width": 360,
-      "height": 55
+      "height": 300
     }
   ]
 }
