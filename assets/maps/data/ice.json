@@ -1,0 +1,39 @@
+{
+  "platforms": [
+    {
+      "id": "top",
+      "x": 820,
+      "y": 218,
+      "width": 410,
+      "height": 45
+    },
+    {
+      "id": "left",
+      "x": 245,
+      "y": 472,
+      "width": 330,
+      "height": 45
+    },
+    {
+      "id": "right",
+      "x": 1400,
+      "y": 487,
+      "width": 320,
+      "height": 45
+    },
+    {
+      "id": "bottom_left",
+      "x": 675,
+      "y": 935,
+      "width": 360,
+      "height": 55
+    },
+    {
+      "id": "bottom_right",
+      "x": 1185,
+      "y": 935,
+      "width": 360,
+      "height": 55
+    }
+  ]
+}

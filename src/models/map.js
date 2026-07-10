@@ -1,61 +1,35 @@
-/* Explicação para a classe Platform:
-
---> Quando formos criar uma plataforma, primeiro vamos dar uma coordnada e
-uma largura e altura para o Phaser.js calcular um retângulo e gerar n o espaço
-assim ó:
-
-[dentro da Scene]
-    this.platforms = this.physics.add.staticGroup();
-
-    // objeto "map" da classe Map
-    map.platforms.forEach(p => {
-        rectangle = this.add.rectangle(
-            p.x + p.width/2,
-            p.y + p.height/2,
-            p.width,
-            p.height
-        );
-        
-        // agora pra frente, usamos essas informações
-        // salvas no objeto map para criar 
-
-        this.physics.add.existing(rect, true);
-        
-        this.platforms.add(rect);
-    });    
-*/
 export default class Map {
-    constructor(){}
+  constructor(scene) {
+    this.scene = scene;
+    this.platforms = [];
+  }
 
-    constructor(data) {
-        this.gravity = data.gravity;
-        this.platforms = data.platforms;
-        this.mapImage = data.mapImage;
+  load(name) {
+    this.mapName = name;
+    this.scene.load.json(`map-${name}`, `assets/maps/data/${name}.json`);
+    this.scene.load.image(`map-image-${name}`, `assets/maps/image/${name}.jpg`);
+  }
+
+  create() {
+    const mapData = this.scene.cache.json.get(`map-${this.mapName}`);
+    this.platforms = Array.isArray(mapData?.platforms) ? mapData.platforms : [];
+
+    if (!this.platforms.length) {
+      console.warn("Nenhuma plataforma foi carregada para o mapa.");
+      return;
     }
 
-    // caso seja útil, tá aí
-    createPlatform(x, y, width, height) {
-        return new Platform(x, y, width, height);
-    }
+    //TODO: Adicionar imagem mapa
 
-    showGravity() {
-        console.log(`Gravity: ${this.gravity} - m/s²`);
-    }
-
-    showGrounds() {
-        console.log(`${this.grounds} - grounds`);
-    }
-
-    /* (?) sugestão(ões): */
-    //
-    //
-}
-
-class Platform {
-    constructor(data) {
-        this.x = data.x;
-        this.y = data.y;
-        this.width = data.width;
-        this.height = data.height;
-    }
+    this.platforms.forEach((platform) => {
+      const rect = this.scene.add.rectangle(
+        platform.x,
+        platform.y,
+        platform.width,
+        platform.height,
+        0x444444,
+      );
+      this.scene.physics.add.existing(rect, true);
+    });
+  }
 }
