@@ -34,9 +34,9 @@ export default class Character {
       `character-image-${this.characterName}`,
     );
 
-    this.sprite.setBodySize(32, 48, true);
+    this.sprite.setBodySize(data.hitbox.width, data.hitbox.height, true);
     this.sprite.setCollideWorldBounds(true);
-    this.sprite.setScale(2);
+    this.sprite.setScale(data.hitbox.scale);
 
     //Cria animação
     if (!this.scene.anims.exists(`idle-${this.characterName}`)) {

@@ -4,6 +4,6 @@
   "strength": 5,
   "resistance": 5,
   "speed": 10,
-  "hitbox": [10, 10],
+  "hitbox": { "height": 48, "width": 32, "scale": 2 },
   "mov": ["dashAttack"]
 }

@@ -22,6 +22,7 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
+    // Debugger
     this.physics.world.createDebugGraphic();
 
     this.map.create();
