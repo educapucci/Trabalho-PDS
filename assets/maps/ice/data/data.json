@@ -35,5 +35,9 @@
       "width": 360,
       "height": 300
     }
-  ]
+  ],
+  "spawn_location": {
+    "player_one": { "x": 450, "y": 450 },
+    "player_two": { "x": 450, "y": 700 }
+  }
 }

@@ -12,16 +12,44 @@ export default class Game extends Phaser.Scene {
 
     this.map = new Map(this);
     this.player1 = new Character(this);
+    this.player2 = new Character(this);
   }
 
   preload() {
     this.map.preload(this.mapName);
     this.player1.preload(this.characterNames[0]);
+    this.player2.preload(this.characterNames[1]);
   }
 
   create() {
+    this.physics.world.createDebugGraphic();
+
     this.map.create();
-    this.player1.create(350, 477.5);
+
+    this.player1.create(
+      this.map.p1_spawn_location.x,
+      this.map.p1_spawn_location.y,
+    );
+
+    this.player2.create(
+      this.map.p2_spawn_location.x,
+      this.map.p2_spawn_location.y,
+    );
+
+    // --- LOGGER DE DEBUG ---
+    console.log("--- VERIFICAÇÃO DE INICIALIZAÇÃO ---");
+    console.log("Player 1 completo:", this.player1);
+    console.log("Player 1 Sprite:", this.player1.sprite);
+    console.log("Plataformas Group:", this.map.platforms);
+    console.log(
+      "Quantidade de plataformas físicas:",
+      this.map.platforms?.getLength(),
+    );
+    console.log("-------------------------------------");
+
+    // Criação dos colliders
+    this.physics.add.collider(this.player1.sprite, this.map.platforms);
+    this.physics.add.collider(this.player2.sprite, this.map.platforms);
   }
 
   update() {}

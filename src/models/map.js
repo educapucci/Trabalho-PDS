@@ -1,7 +1,7 @@
 export default class Map {
   constructor(scene) {
     this.scene = scene;
-    this.platforms = [];
+    this.platforms = this.scene.physics.add.staticGroup();
   }
 
   preload(name) {
@@ -18,16 +18,19 @@ export default class Map {
 
   create() {
     const mapData = this.scene.cache.json.get(`map-${this.mapName}`);
-    this.platforms = Array.isArray(mapData?.platforms) ? mapData.platforms : [];
+    const platformsData = Array.isArray(mapData?.platforms)
+      ? mapData.platforms
+      : [];
+
+    this.p1_spawn_location = mapData.spawn_location.player_one;
+    this.p2_spawn_location = mapData.spawn_location.player_two;
 
     const background = this.scene.add.image(0, 0, `map-image-${this.mapName}`);
-
     background.setOrigin(0, 0);
-
     background.displayWidth = this.scene.scale.width;
     background.displayHeight = this.scene.scale.height;
 
-    this.platforms.forEach((platform) => {
+    platformsData.forEach((platform) => {
       const rect = this.scene.add.rectangle(
         platform.x,
         platform.y,
@@ -36,6 +39,8 @@ export default class Map {
         0x444444,
       );
       this.scene.physics.add.existing(rect, true);
+      rect.body.updateFromGameObject();
+      this.platforms.add(rect);
     });
   }
 }
