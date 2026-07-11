@@ -7,8 +7,8 @@ export default class Game extends Phaser.Scene {
   }
 
   init(data) {
-    this.mapName = data?.mapName || "defaultMap";
-    this.characterNames = data?.characterNames || [];
+    this.mapName = data.mapName;
+    this.characterNames = data.characterNames;
 
     this.map = new Map(this);
     this.player1 = new Character(this);

@@ -50,7 +50,7 @@ export default class Character {
           },
         ),
         frameRate: 10,
-        repeat: -1, // -1 faz a animação rodar em loop infinito
+        repeat: -1, // -1 faz a animação rodar em loop
       });
     }
     //Dá play no spritesheet
@@ -65,7 +65,9 @@ export default class Character {
     this.sprite.setVelocityX(this.speed);
   }
 
-  jump() {}
+  jump() {
+    console.log(`${this.name} - jump`);
+  }
 
   attack() {
     console.log(`${this.name} - attack`);

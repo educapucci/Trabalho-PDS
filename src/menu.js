@@ -1,5 +1,7 @@
 import Game from "./models/game.js";
 
+//TODO: Criar classe com cena de menu para seleção de mapa e personagens
+
 const config = {
   type: Phaser.AUTO,
   width: window.innerWidth,
