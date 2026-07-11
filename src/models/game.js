@@ -36,18 +36,6 @@ export default class Game extends Phaser.Scene {
       this.map.p2_spawn_location.y,
     );
 
-    // --- LOGGER DE DEBUG ---
-    console.log("--- VERIFICAÇÃO DE INICIALIZAÇÃO ---");
-    console.log("Player 1 completo:", this.player1);
-    console.log("Player 1 Sprite:", this.player1.sprite);
-    console.log("Plataformas Group:", this.map.platforms);
-    console.log(
-      "Quantidade de plataformas físicas:",
-      this.map.platforms?.getLength(),
-    );
-    console.log("-------------------------------------");
-
-    // Criação dos colliders
     this.physics.add.collider(this.player1.sprite, this.map.platforms);
     this.physics.add.collider(this.player2.sprite, this.map.platforms);
   }

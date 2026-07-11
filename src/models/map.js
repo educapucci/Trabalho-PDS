@@ -36,7 +36,8 @@ export default class Map {
         platform.y,
         platform.width,
         platform.height,
-        0x444444,
+        0xffffff,
+        0,
       );
       this.scene.physics.add.existing(rect, true);
       rect.body.updateFromGameObject();

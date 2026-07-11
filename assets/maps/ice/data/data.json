@@ -38,6 +38,6 @@
   ],
   "spawn_location": {
     "player_one": { "x": 450, "y": 450 },
-    "player_two": { "x": 450, "y": 700 }
+    "player_two": { "x": 1650, "y": 450 }
   }
 }
