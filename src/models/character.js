@@ -50,11 +50,19 @@ export default class Character {
           },
         ),
         frameRate: 10,
-        repeat: -1, // -1 faz a animação rodar em loop
+        repeat: -1, //-1 faz a animação rodar em loop
       });
     }
     //Dá play no spritesheet
     this.sprite.play(`idle-${this.characterName}`);
+
+    //Inicializa atributos
+    this.name = data.name;
+    this.damage = 0;
+    this.strength = data.strength;
+    this.resistance = data.resistance;
+    this.speed = data.speed;
+    this.special_movement = data.special_movement;
   }
 
   moveLeft() {

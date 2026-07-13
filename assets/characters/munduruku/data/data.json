@@ -1,9 +1,8 @@
 {
   "name": "Munduruku",
-  "damage": 0,
   "strength": 8,
   "resistance": 10,
   "speed": 2,
-  "hitbox": { "height": 48, "width": 35, "scale": 3 },
-  "mov": ["spin"]
+  "hitbox": { "height": 48, "width": 28, "scale": 3 },
+  "special_movement": ["spin"]
 }

@@ -22,8 +22,7 @@ export default class Map {
       ? mapData.platforms
       : [];
 
-    this.p1_spawn_location = mapData.spawn_location.player_one;
-    this.p2_spawn_location = mapData.spawn_location.player_two;
+    this.spawn_location = mapData.spawn_location;
 
     const background = this.scene.add.image(0, 0, `map-image-${this.mapName}`);
     background.setOrigin(0, 0);
@@ -40,7 +39,9 @@ export default class Map {
         0,
       );
       this.scene.physics.add.existing(rect, true);
+
       rect.body.updateFromGameObject();
+
       this.platforms.add(rect);
     });
   }

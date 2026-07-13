@@ -1,9 +1,8 @@
 {
   "name": "Urutu",
-  "damage": 0,
   "strength": 5,
   "resistance": 5,
   "speed": 10,
-  "hitbox": { "height": 48, "width": 32, "scale": 2 },
-  "mov": ["dashAttack"]
+  "hitbox": { "height": 40, "width": 20, "scale": 2 },
+  "special_movement": ["dashAttack"]
 }
