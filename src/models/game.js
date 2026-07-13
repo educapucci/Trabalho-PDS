@@ -64,12 +64,12 @@ export default class Game extends Phaser.Scene {
     player1.moveLeft();
   } else if (this.cursors.right.isDown) {
     player1.moveRight();
-  } else {
-    player1.sprite.setVelocityX(0);
-  }
-  if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
+  }  else if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
     player1.jump();
+  } else {
+    player1.stop();
   }
+  
 
   // Urutu (WASD) - agora é players[0]
   const player2 = this.players[0];
@@ -77,11 +77,10 @@ export default class Game extends Phaser.Scene {
     player2.moveLeft();
   } else if (this.wasd.right.isDown) {
     player2.moveRight();
-  } else {
-    player2.sprite.setVelocityX(0);
-  }
-  if (Phaser.Input.Keyboard.JustDown(this.wasd.up)) {
+  }  else if (Phaser.Input.Keyboard.JustDown(this.wasd.up)) {
     player2.jump();
+  } else {
+    player2.stop();
   }
 }
 }

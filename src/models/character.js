@@ -12,8 +12,17 @@ export default class Character {
     );
 
     this.scene.load.spritesheet(
-      `character-image-${this.characterName}`,
+      `character-idle-${this.characterName}`,
       `assets/characters/${this.characterName}/images/IDLE.png`,
+      {
+        frameWidth: 96,
+        frameHeight: 84,
+      },
+    );
+
+    this.scene.load.spritesheet(
+      `character-walk-right-${this.characterName}`,
+      `assets/characters/${this.characterName}/images/WALK.png`,
       {
         frameWidth: 96,
         frameHeight: 84,
@@ -33,7 +42,7 @@ export default class Character {
     this.sprite = this.scene.physics.add.sprite(
       x,
       y,
-      `character-image-${this.characterName}`,
+      `character-idle-${this.characterName}`,
     );
 
     this.sprite.setBodySize(data.hitbox.width, data.hitbox.height, true);
@@ -45,7 +54,7 @@ export default class Character {
       this.scene.anims.create({
         key: `idle-${this.characterName}`,
         frames: this.scene.anims.generateFrameNumbers(
-          `character-image-${this.characterName}`,
+          `character-idle-${this.characterName}`,
           {
             start: 0,
             end: 6,
@@ -73,6 +82,23 @@ export default class Character {
   }
 
   moveRight() {
+    //Cria animação
+    if (!this.scene.anims.exists(`walk-${this.characterName}`)) {
+      this.scene.anims.create({
+        key: `walk-${this.characterName}`,
+        frames: this.scene.anims.generateFrameNumbers(
+          `character-walk-right-${this.characterName}`,
+          {
+            start: 0,
+            end: 6,
+          },
+        ),
+        frameRate: 10,
+        repeat: -1, //-1 faz a animação rodar em loop
+      });
+    }
+    //Dá play no spritesheet
+    this.sprite.play(`walk-${this.characterName}`);
     this.sprite.setVelocityX(this.speed * 50);
     this.sprite.setFlipX(this.facesLeftByDefault);
   }
@@ -82,6 +108,11 @@ export default class Character {
     this.sprite.setVelocityY(-850); // ajuste a força do pulo aqui
     console.log(`${this.name} - jump`);
   }
+  }
+
+  stop(){
+    this.sprite.setVelocityX(0);
+    this.sprite.play(`idle-${this.characterName}`);
   }
 
   attack() {
