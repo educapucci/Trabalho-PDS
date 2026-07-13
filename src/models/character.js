@@ -28,6 +28,8 @@ export default class Character {
     this.speed = data.speed;
     this.resistance = data.resistance;
 
+    this.facesLeftByDefault = data.faces_left_by_default || false;
+
     this.sprite = this.scene.physics.add.sprite(
       x,
       y,
@@ -66,15 +68,20 @@ export default class Character {
   }
 
   moveLeft() {
-    this.sprite.setVelocityX(-this.speed);
+    this.sprite.setVelocityX(-this.speed * 50); // ajuste o multiplicador ao seu gosto
+    this.sprite.setFlipX(!this.facesLeftByDefault);
   }
 
   moveRight() {
-    this.sprite.setVelocityX(this.speed);
+    this.sprite.setVelocityX(this.speed * 50);
+    this.sprite.setFlipX(this.facesLeftByDefault);
   }
 
   jump() {
+  if (this.sprite.body.blocked.down || this.sprite.body.touching.down) {
+    this.sprite.setVelocityY(-850); // ajuste a força do pulo aqui
     console.log(`${this.name} - jump`);
+  }
   }
 
   attack() {

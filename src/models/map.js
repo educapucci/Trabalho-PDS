@@ -26,8 +26,8 @@ export default class Map {
 
     const background = this.scene.add.image(0, 0, `map-image-${this.mapName}`);
     background.setOrigin(0, 0);
-    background.displayWidth = this.scene.scale.width;
-    background.displayHeight = this.scene.scale.height;
+    background.displayWidth = 1920;
+    background.displayHeight = 1080;
 
     platformsData.forEach((platform) => {
       const rect = this.scene.add.rectangle(
