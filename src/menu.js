@@ -1,5 +1,5 @@
 import Game from "./models/game.js";
-
+import Player from "./models/player.js";
 //TODO: Criar classe com cena de menu para seleção de mapa e personagens
 
 const config = {
@@ -21,9 +21,15 @@ const config = {
   scene: [Game],
 };
 
+
 const game = new Phaser.Game(config);
+
+player1 = new Player("urutu");
+player2 = new Player("munduruku");
 
 game.scene.start("Game", {
   mapName: "ice",
-  characterNames: ["urutu", "munduruku"],
+  //players: [{characterName: "urutu"}, {characterName: "munduruku"}],
+  players: [player1, player2],
+  //characterNames: ["urutu", "munduruku"],
 });
