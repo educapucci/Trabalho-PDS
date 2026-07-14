@@ -1,5 +1,6 @@
 import Map from "./map.js";
 import Character from "./character.js";
+import Player from "./player.js";
 
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -9,17 +10,22 @@ export default class Game extends Phaser.Scene {
   }
 
   init(data) {
+
+    if(!data.players) return;
+
+    this.player = data.player;
     this.mapName = data.mapName;
-    //this.characterNames = data.characterNames;
 
     this.map = new Map(this);
-
     this.players = data.players;
+    console.log("teste");
+    console.log(data.players[0] instanceof Player); // true
 
     this.players.forEach((player) => {
-      player.init(this.scene);
+      player.init(this);
     });
 
+    console.log("players: ", this.players);
 
     /*
     BAGUGA OU MORTE? MORTE
@@ -57,13 +63,6 @@ export default class Game extends Phaser.Scene {
       );
     }
 
-    /*for (let i = 0; i < this.players.length; i++) {
-      this.players[i].create(
-        this.map.spawn_location[i].x,
-        this.map.spawn_location[i].y,
-      );
-    }
-    */
     this.players.forEach((player) => {
       this.physics.add.collider(player.character.sprite, this.map.platforms);
     });

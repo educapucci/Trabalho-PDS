@@ -7,27 +7,20 @@ export default class Player {
   constructor(characterName){
     this.characterName = characterName;
     this.id = Player.proxId++;
+    //this.character=NULL;
   }
 
   init(scene){
-    this.character = new Character(scene);
-                                                     
+    this.character = new Character(scene);                                               
   }
 
   preload(){
-    character.preload(characterName);
+    this.character.preload(this.characterName);
   }
 
   create(x, y){
     
   }
-
-
-
-  
-
-  
-
 
   /*#JOGO
   inputs (teclado)
