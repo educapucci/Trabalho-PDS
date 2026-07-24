@@ -8,14 +8,14 @@ export default class Menu extends Phaser.Scene{
   }
 
   preload() {
-    this.load.json("inputdata", "assets/inputs/data.json");
+    this.load.json("inputdata", "assets/inputs/data/data.json");
   }
 
   create(){
-    const teclados = this.cache.json.get("inputdata");
+    this.teclados = this.cache.json.get("inputdata");
 
-    const player1 = new Player("urutu", teclados[0]);
-    const player2 = new Player("munduruku", teclados[1]);
+    const player1 = new Player("urutu", this.teclados[0]);
+    const player2 = new Player("munduruku", this.teclados[1]);
 
     this.scene.start("Game", {
       mapName: "ice",

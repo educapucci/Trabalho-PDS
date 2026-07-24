@@ -8,6 +8,7 @@ export default class Character {
 
         this.state = "idle";
         this.facing = "right";
+	this.idDiving = false;
 	
 	this.jumpforce = 750;
     }
@@ -45,6 +46,8 @@ export default class Character {
     this.strength = data.strength;
     this.speed = data.speed;
     this.resistance = data.resistance;
+    this.defaultGravity = this.scene.physics.world.gravity.y;
+    this.diveGravity = 100;
 
     this.facesLeftByDefault = data.faces_left_by_default || false;
 
@@ -102,9 +105,16 @@ export default class Character {
             this.stop();
         }
 
-        if (input.jump) {
+        if (input.up) {
             this.jump();
         }
+	if (input.down){
+	    this.isDiving = true;
+	    this.dive();
+	} else if (!input.down && this.isDiving){
+	    this.isDiving = false;
+	    this.freeFall();
+	}
     }
 
     handleActions(input) {
@@ -134,13 +144,20 @@ export default class Character {
     }
 
     jump() {
-
         if (!this.sprite.body.blocked.down) {
             return;
         }
 
         this.sprite.setVelocityY(-this.jumpforce);
     }
+
+	dive() {
+		this.sprite.setVelocityY(this.defaultGravity+this.diveGravity);
+	}
+
+	freeFall() {	
+		this.sprite.setVelocityY(this.defaultGravity);
+	}
 
     attack() {
         console.log("Ataque");

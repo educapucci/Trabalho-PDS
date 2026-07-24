@@ -9,24 +9,25 @@ export default class Player {
     this.characterName = characterName;
     this.inputdata = input;
     this.id = Player.proxId++;
-    //this.character=NULL;
   }
 
 	init(scene){
     this.character = new Character(scene);                                               
+	this.input = new PlayerInput(this.inputdata, scene);
   }
 
 	preload(){
     this.character.preload(this.characterName);
   }
 
-	create(x, y){
-    this.input = new PlayerInput(this.inputdata, this);
+create(x, y){
+	this.input.init();
+	this.character.create(x, y);
   }
 
 	update(){
-        const inputState = this.input.handleKeyboardPlayer();
+        this.inputState = this.input.update();
 
-        this.character.update(inputState);
+        this.character.update(this.inputState);
 	}
 }
