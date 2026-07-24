@@ -47,19 +47,19 @@ GitHub
 
 	Jogo utiliza Programação Orientação à Objetos e eventos acionados pelo motor Phaser para separar responsabilidades entre classes, como lidar com *inputs* do usuário, mover o personagem e criar um mapa.
 
-‘’’  
-Player  
-│  
-├── PlayerInput  
-│      │  
-│      └── lê teclado  
-│  
-└── Character  
-       │  
-       ├── Física  
-       ├── Sprite  
-       ├── Estados  
-       └── Combate  
+‘’’
+Player
+│
+├── PlayerInput 
+│		│
+│	 	└── lê teclado
+│
+└── Character
+		│
+		├── Física
+		├── Sprite
+		├── Estados
+		└── Combate
 ‘’’
 
 A classe Player intercala a interface de entrada de dados (PlayerInput) com a execução de comandos do personagem (Chraracter).
