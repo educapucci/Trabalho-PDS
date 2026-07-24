@@ -15,13 +15,11 @@ Tudo o que você precisa saber para jogar no nosso projeto.
 * Como jogar  
 * Colaboradores
 
-—
 
 ### Sobre o projeto
 
 	O intuito é desenvolver uma aplicação *web* de *videogame* 2D para a disciplina de Processo de Desenvolvimento de Software. Buscamos inspiração em jogos de luta multijogador em plataformas como o Super Smash Bros. e o Brawlhalla.
 
-—
 
 ### Tecnologias
 
@@ -39,12 +37,11 @@ Phaser 3
 HTML  
 CSS
 
-###### Controle de versão
+##### Controle de versão
 
 Git  
 GitHub
 
-—
 
 ### Arquitetura
 
@@ -73,7 +70,6 @@ Os arquivos [menu.js](http://menu.js) e [config.js](http://config.js) são respo
 
 Todo arsenal de dados estáticos que vão ser carregados ao iniciar o jogo estão salvos em arquivos JSON.
 
-—
 
 ### Mecânicas do jogo
 
@@ -100,7 +96,6 @@ Todo arsenal de dados estáticos que vão ser carregados ao iniciar o jogo estã
 
 * O objetivo é derrubar os adversários para fora da arena.)
 
-—
 
 ### Personagens
 
@@ -129,7 +124,6 @@ ataques permitidos
 
 (planejamento: personagens também possuirão velocidade, peso, força e ataques exclusivos)
 
-—
 
 ### Mapas
 
@@ -143,7 +137,6 @@ O projeto prevê ser capaz de conter múltiplos mapas com diferentes estilos de 
 
 (planejamento: escolher dentre mais de um mapa no menu)
 
-—
 
 ### Como jogar
 
@@ -162,27 +155,25 @@ python3 -m http.server
 PLAYER 1:  
 ‘’’  
    	"left" \= "A",  
-    	"right" \="D",  
+    "right" \="D",  
    	"jump" \= "W",  
-    	"dive" \= "S";  
+    "dive" \= "S";  
 ‘’’  
 PLAYER 2:  
 ‘’’  
-"left" \= "LEFT",  
-"right" \= "RIGHT",  
-    	"jump" \= "UP",  
-    	"dive" \= "DOWN".  
+	"left" \= "LEFT",  
+	"right" \= "RIGHT",  
+    "jump" \= "UP",  
+    "dive" \= "DOWN".  
 ‘’’
 
 (exemplo de comandos de movimento e seus *keycode*s do teclado para os *players* 1 e 2\)
 
-—
 
 ### Colaboradores
 
 	Eduardo Cappucci Cunha  
-Eduardo Carvalho Valadão  
-João Pedro Oliveira Fernandes  
-Luís Henrique Vilela de Souza Aléssio  
-Sérgio Filho Garcia Paim
-
+	Eduardo Carvalho Valadão  
+	João Pedro Oliveira Fernandes  
+	Luís Henrique Vilela de Souza Aléssio  
+	Sérgio Filho Garcia Paim
