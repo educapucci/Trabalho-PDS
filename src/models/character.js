@@ -1,9 +1,18 @@
 export default class Character {
-  constructor(scene) {
-    this.scene = scene;
-  }
 
-  preload(name) {
+    constructor(scene) {
+        this.scene = scene;
+
+        this.characterName = null;
+        this.sprite = null;
+
+        this.state = "idle";
+        this.facing = "right";
+	
+	this.jumpforce = 750;
+    }
+
+    preload(name) {
     this.characterName = name;
 
     this.scene.load.json(
@@ -30,7 +39,7 @@ export default class Character {
     );
   }
 
-  create(x, y) {
+	create(x, y) {
     const data = this.scene.cache.json.get(`character-${this.characterName}`);
 
     this.strength = data.strength;
@@ -72,66 +81,69 @@ export default class Character {
     this.damage = 0;
     this.strength = data.strength;
     this.resistance = data.resistance;
-    this.speed = data.speed;
+    this.speed = 50 * data.speed;
     this.special_movement = data.special_movement;
   }
 
-  moveLeft() {
-    this.sprite.setVelocityX(-this.speed * 50); // ajuste o multiplicador ao seu gosto
-    this.sprite.setFlipX(!this.facesLeftByDefault);
-  }
-
-  moveRight() {
-    //Cria animação
-    if (!this.scene.anims.exists(`walk-${this.characterName}`)) {
-      this.scene.anims.create({
-        key: `walk-${this.characterName}`,
-        frames: this.scene.anims.generateFrameNumbers(
-          `character-walk-right-${this.characterName}`,
-          {
-            start: 0,
-            end: 6,
-          },
-        ),
-        frameRate: 10,
-        repeat: -1, //-1 faz a animação rodar em loop
-      });
+    update(input) {
+        this.handleMovement(input);
+        this.handleActions(input);
     }
-    //Dá play no spritesheet
-    this.sprite.play(`walk-${this.characterName}`);
-    this.sprite.setVelocityX(this.speed * 50);
-    this.sprite.setFlipX(this.facesLeftByDefault);
-  }
 
-  jump() {
-  if (this.sprite.body.blocked.down || this.sprite.body.touching.down) {
-    this.sprite.setVelocityY(-850); // ajuste a força do pulo aqui
-    console.log(`${this.name} - jump`);
-  }
-  }
+    handleMovement(input) {
 
-  stop(){
-    this.sprite.setVelocityX(0);
-    this.sprite.play(`idle-${this.characterName}`);
-  }
+        if (input.left && !input.right) {
+            this.moveLeft();
+        }
+        else if (input.right && !input.left) {
+            this.moveRight();
+        }
+        else {
+            this.stop();
+        }
 
-  attack() {
-    console.log(`${this.name} - attack`);
-  }
+        if (input.jump) {
+            this.jump();
+        }
+    }
 
-  special() {
-    console.log(`${this.name} - special`);
-  }
+    handleActions(input) {
 
-  dash() {
-    console.log(`${this.name} - dash`);
-  }
+        if (input.attack) {
+            this.attack();
+        }
 
-  hit() {
-    console.log(`${this.name} - hit`);
-  }
+    }
 
-  getHit() {
-    console.log(`${this.name} - getHit`);
-  }
+    moveLeft() {
+        this.facing = "left";
+
+        this.sprite.setVelocityX(-this.speed);
+        this.sprite.setFlipX(true);
+    }
+
+    moveRight() {
+        this.facing = "right";
+
+        this.sprite.setVelocityX(this.speed);
+        this.sprite.setFlipX(false);
+    }
+
+    stop() {
+        this.sprite.setVelocityX(0);
+    }
+
+    jump() {
+
+        if (!this.sprite.body.blocked.down) {
+            return;
+        }
+
+        this.sprite.setVelocityY(-this.jumpforce);
+    }
+
+    attack() {
+        console.log("Ataque");
+    }
+
 }
