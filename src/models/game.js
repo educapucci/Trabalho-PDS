@@ -47,6 +47,7 @@ export default class Game extends Phaser.Scene {
     // Player 1 - setas
   this.cursors = this.input.keyboard.createCursorKeys();
 
+
   // Player 2 - WASD
   this.wasd = this.input.keyboard.addKeys({
     up: Phaser.Input.Keyboard.KeyCodes.W,

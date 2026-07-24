@@ -1,29 +1,29 @@
 import Game from "./models/game.js";
-
+import Player from "./models/player.js";
 //TODO: Criar classe com cena de menu para seleção de mapa e personagens
 
-const config = {
-  type: Phaser.AUTO,
-  width: 1920,
-  height: 1080,
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 1920,
-    height: 1080
-  },
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 1000 },
-    },
-  },
-  scene: [Game],
-};
+export default class Menu extends Phaser.Scene{
 
-const game = new Phaser.Game(config);
 
-game.scene.start("Game", {
-  mapName: "ice",
-  characterNames: ["urutu", "munduruku"],
-});
+  constructor(){
+    super("Menu");
+  }
+
+  preload() {
+    this.load.json("inputdata", "assets/inputs/data.json");
+  }
+
+  create(){
+    const teclados = this.cache.json.get("inputdata");
+
+    const player1 = new Player("urutu", teclados[0]);
+    const player2 = new Player("munduruku", teclados[1]);
+
+    this.scene.start("Game", {
+      mapName: "ice",
+      //players: [{characterName: "urutu"}, {characterName: "munduruku"}],
+      players: [player1, player2]
+      //characterNames: ["urutu", "munduruku"],
+    });
+  }
+}
