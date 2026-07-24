@@ -1,5 +1,6 @@
 import Menu from "./menu.js"
 import Game from "./models/game.js"
+
 const config = {
   type: Phaser.AUTO,
   width: 1920,

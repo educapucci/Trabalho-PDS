@@ -4,7 +4,7 @@ export default class PlayerInput {
         data:   precisa ser o objeto tirado do JSON que representa as
                 as teclas restitas ao jogador
         player: o jogador que instanciou o Input
-    */
+    */    
     constructor(data, player) {
         this.player = player;
         this.character = this.player.character; // personagem atrelado ao player
