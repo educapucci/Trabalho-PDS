@@ -101,17 +101,17 @@ O jogo utiliza Programação Orientação à Objetos e eventos acionados pelo mo
 
 ‘’’
 Player
-│
+│ 
 ├── PlayerInput
-│      │
+│      │ 
 │      └── lê teclado
-│
+│ 
 └── Character
-       │
-       ├── Física
-       ├── Sprite
-       ├── Estados
-       └── Combate
+       │ 
+       ├── Física 
+       ├── Sprite 
+       ├── Estados 
+       └── Combate 
 ‘’’
 (Exemplo de nova estrutura apresentada no código atual)
 
