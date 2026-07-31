@@ -98,21 +98,20 @@ O jogo utiliza Programação Orientação à Objetos e eventos acionados pelo mo
 
 
 (Imagem remetente ao diagrama original do projeto, antes da adição de mais classes)
-
-‘’’
+```text
 Player
-│ 
+│
 ├── PlayerInput
-│      │ 
-│      └── lê teclado
-│ 
+│   │
+│   └── Lê teclado
+│
 └── Character
-       │ 
-       ├── Física 
-       ├── Sprite 
-       ├── Estados 
-       └── Combate 
-‘’’
+    │
+    ├── Física
+    ├── Sprite
+    ├── Estados
+    └── Combate
+```
 (Exemplo de nova estrutura apresentada no código atual)
 
 A classe Player intercala a interface de entrada de dados (PlayerInput) com a execução de comandos do personagem (Chraracter).
