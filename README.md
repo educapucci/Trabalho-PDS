@@ -2,6 +2,8 @@
 
 Tudo o que você precisa saber para jogar no nosso projeto.
 
+Wiki com imagens pode ser acessado pelo link: [https://docs.google.com/document/d/1nhaxj4JxOATJHqMJ77gShDJ2iLNEWp7LHVIOB50vM_s/edit?usp=sharing]
+
 ##  Sumário
 
 * Sobre o projeto  
