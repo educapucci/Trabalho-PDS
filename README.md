@@ -2,7 +2,7 @@ Fight Arena Wiki
 
 Tudo o que você precisa saber para jogar no nosso projeto.
 
-
+Wiki com imagens disponível no link: [https://docs.google.com/document/d/1nhaxj4JxOATJHqMJ77gShDJ2iLNEWp7LHVIOB50vM_s/edit?usp=sharing]
 
  Sumário
 Sobre o projeto
@@ -20,11 +20,11 @@ Conclusão
 —
 Sobre o projeto
 
-	O intuito é desenvolver uma aplicação web de videogame 2D para a disciplina de Processo de Desenvolvimento de Software. Buscamos inspiração em jogos de luta multijogador em plataformas como o Super Smash Bros. e o Brawlhalla.
+O intuito é desenvolver uma aplicação web de videogame 2D para a disciplina de Processo de Desenvolvimento de Software. Buscamos inspiração em jogos de luta multijogador em plataformas como o Super Smash Bros. e o Brawlhalla.
 
 Decisão
 
-	A ideia da equipe era experimentar o desenvolvimento de algo desafiador que aplica conceitos estudados de arquitetura de software, portanto um jogo de videogame foi escolhido e um teste foi feito com uma pequena demonstração, o suficiente para nos fazer decidir de uma vez.
+A ideia da equipe era experimentar o desenvolvimento de algo desafiador que aplica conceitos estudados de arquitetura de software, portanto um jogo de videogame foi escolhido e um teste foi feito com uma pequena demonstração, o suficiente para nos fazer decidir de uma vez.
 Requisitos
 
 Histórias de Usuário
@@ -192,7 +192,7 @@ Arte de fundo
 —
 Como jogar
 
-	Como está baseado em jogos multiplayer, o projeto atualmente está configurado para atender até 2 jogadores no mesmo teclado, sendo essas as seguintes teclas de movimentação (e ataque [não desenvolvido]):
+Como está baseado em jogos multiplayer, o projeto atualmente está configurado para atender até 2 jogadores no mesmo teclado, sendo essas as seguintes teclas de movimentação (e ataque [não desenvolvido]):
 
 PLAYER 1:
 ‘’’
@@ -215,5 +215,5 @@ PLAYER 2:
 
 Conclusão
 
-	Embora tenhamos progredido bem pouco para a ideia inicial de ser um jogo completo, aprendemos que um bom planejamento prévio evita transbordo de tarefas.
+Embora tenhamos progredido bem pouco para a ideia inicial de ser um jogo completo, aprendemos que um bom planejamento prévio evita transbordo de tarefas.
 Houveram muitas dificuldades para conciliar tempo de desenvolvimento com outras tarefas de nossas rotinas, principalmente também acadêmicas como esta aqui, reforçando o cuidado que devemos ter no método Scrum e em qualquer outro time de desenvolvimento de software que decidamos participar.
