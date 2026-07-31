@@ -2,8 +2,6 @@
 
 Tudo o que você precisa saber para jogar no nosso projeto.
 
-![][image1]
-
 ##  Sumário
 
 * Sobre o projeto  
@@ -22,11 +20,11 @@ Tudo o que você precisa saber para jogar no nosso projeto.
 
 ### Sobre o projeto
 
-	O intuito é desenvolver uma aplicação *web* de *videogame* 2D para a disciplina de Processo de Desenvolvimento de Software. Buscamos inspiração em jogos de luta multijogador em plataformas como o Super Smash Bros. e o Brawlhalla.
+   O intuito é desenvolver uma aplicação *web* de *videogame* 2D para a disciplina de Processo de Desenvolvimento de Software. Buscamos inspiração em jogos de luta multijogador em plataformas como o Super Smash Bros. e o Brawlhalla.
 
 ### Decisão
 
-	A ideia da equipe era experimentar o desenvolvimento de algo desafiador que aplica conceitos estudados de arquitetura de software, portanto um jogo de videogame foi escolhido e um teste foi feito com uma pequena demonstração, o suficiente para nos fazer decidir de uma vez.
+   A ideia da equipe era experimentar o desenvolvimento de algo desafiador que aplica conceitos estudados de arquitetura de software, portanto um jogo de videogame foi escolhido e um teste foi feito com uma pequena demonstração, o suficiente para nos fazer decidir de uma vez.
 
 ### Requisitos
 
@@ -58,11 +56,11 @@ Tudo o que você precisa saber para jogar no nosso projeto.
 
 ###### Metodologia
 
-	Comumente se utilizou o método ágil Scrum no decorrer do projeto, mas adotados práticas que são utilizadas dentro do XP (Extreme Programming), como o pair programming. 
+   Comumente se utilizou o método ágil Scrum no decorrer do projeto, mas adotados práticas que são utilizadas dentro do XP (Extreme Programming), como o pair programming. 
 
 ###### Colaboradores e suas funções
 
-	Eduardo Cappucci Cunha \- PO  
+Eduardo Cappucci Cunha \- PO  
 Eduardo Carvalho Valadão \- Dev  
 João Pedro Oliveira Fernandes \- Dev Estagiário  
 Luís Henrique Vilela de Souza Aléssio \- Scrum Master  
@@ -72,16 +70,11 @@ Sérgio Filho Garcia Paim \- Dev Sênior
 
 * Total de *sprints* realizadas: 4;  
 * Total de histórias de usuário: \~10;  
-* Informções do Jira:
-
-![][image2](Desempenho de tarefas)
-
-	![][image3]  
-(Criação de novas tarefas e histórias)
+* Informções do Jira: (ver link pro Google Docs)
 
 ###### Transbordos de tarefas
 
-	A maioria das histórias não foi concluída por excesso de planejamento prévio das mesmas no Sprint inicial do projeto.
+   A maioria das histórias não foi concluída por excesso de planejamento prévio das mesmas no Sprint inicial do projeto.
 
 ### Tecnologias
 
@@ -111,9 +104,6 @@ GitHub
 
 O jogo utiliza Programação Orientação à Objetos e eventos acionados pelo motor Phaser para separar responsabilidades entre classes, como lidar com *inputs* do usuário, mover o personagem e criar um mapa.
 
-![][image4]  
-(Imagem remetente ao diagrama original do projeto, antes da adição de mais classes)
-
 ‘’’  
 Player  
 │  
@@ -134,13 +124,9 @@ A classe Player intercala a interface de entrada de dados (PlayerInput) com a ex
 
 Também temos a classe Game que estende Scene pertencente ao Phaser para que controlemos tudo a partir de uma tela de navegador contendo elementos, física e eventos.
 
-![][image5]
-
 Os arquivos [menu.js](http://menu.js) e [config.js](http://config.js) são responsáveis por criar a dinâmica de classes do jogo e por configurar o comportamento da *engine*, respectivamente.
 
 Todo arsenal de dados estáticos que vão ser carregados ao iniciar o jogo estão salvos em arquivos JSON.
-
-![][image6]
 
 —
 
@@ -148,7 +134,7 @@ Todo arsenal de dados estáticos que vão ser carregados ao iniciar o jogo estã
 
 ###### *Movimentação:*
 
-	Acione teclas como W, S, A e D ou *UP, LEFT, DOWN, RIGHT* para pular, ir para a esquerda, cair rapidamente e ir para a direita, respectivamente;
+   Acione teclas como W, S, A e D ou *UP, LEFT, DOWN, RIGHT* para pular, ir para a esquerda, cair rapidamente e ir para a direita, respectivamente;
 
 ##### *Ataque:*
 
@@ -172,8 +158,6 @@ Todo arsenal de dados estáticos que vão ser carregados ao iniciar o jogo estã
 ### —
 
 ### Personagens
-
-![][image7]
 
 Esses sãos seus estados que estão planejados:  
 ‘’’  
@@ -235,7 +219,7 @@ PLAYER 2:
     	"dive" \= "DOWN".  
 ‘’’
 
-(exemplo de comandos de movimento e seus *keycode*s do teclado para os *players* 1 e 2\)
+(Exemplo de comandos de movimento e seus *keycode*s do teclado para os *players* 1 e 2\)
 
 —
 
